@@ -7,7 +7,12 @@ const {
   updateWorkout
 } = require('../controllers/workoutController')
 
+const requireAuth=require('../middleware/requireAuth')
+
 const router = express.Router()
+
+router.use(requireAuth)
+// we do that to protect all the next workouts routes 
 
 // GET all workouts
 router.get('/', getWorkouts)
