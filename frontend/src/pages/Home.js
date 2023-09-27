@@ -11,10 +11,10 @@ const Home = () => {
   useEffect(() => {
     const fetchWorkouts = async () => {
       const response = await fetch('/api/workouts')
-      const json = await response.json()
+      const json = await response.json() // the response that we get from the server 
 
       if (response.ok) {
-        dispatch({type: 'SET_WORKOUTS', payload: json})
+        dispatch({type: 'SET_WORKOUTS', payload: json}) // the payload contains the data from the server
       }
     }
 
